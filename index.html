@@ -18,7 +18,7 @@
         </style>
 </head>
     <body>
-      <audio autoplay="autoplay" preload="auto" src="music/clj.mp3">
+      <audio autoplay="autoplay" id="vd" preload="auto" src="music/clj.mp3">
   
       </audio>  
 
@@ -54,7 +54,21 @@
             </div>
             
         </div>
-    
+        <script type="text/javascript">
+    window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+
+    function toggleSound() {
+                var music = document.getElementById("vd");//获取ID  
+                    
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
+</script>
+
     <script>
     </script>
 
